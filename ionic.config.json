@@ -1,0 +1,7 @@
+{
+  "name": "PracticaTinder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
