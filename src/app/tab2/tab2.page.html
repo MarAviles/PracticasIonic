@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Sobre mí
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,27 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Sobre mí</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card class="contenido">
+    <ion-item id="imagen">
+        <ion-img id="imagen" src="../../assets/esime.jpg"></ion-img>
+    </ion-item>
+  
+    <ion-card-content> 
+        <h2 id="titulo">Sobre mí</h2>
+
+        <ion-list>
+            <ion-label>Nací el 13 de diciembre de 1999</ion-label>
+            <ion-label>Tengo 22 años</ion-label>
+            <ion-label>Estudié en el Instituto Politécnico Nacional ESIME Culhuacán</ion-label>
+            <ion-label>Me gustan los gatos</ion-label>
+            <ion-label>Me gusta tocar el piano</ion-label>
+
+        </ion-list>           
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

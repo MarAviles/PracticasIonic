@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Contacto
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,46 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Contacto</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-content class="contenido">
+    <form [formGroup]="formulario" (ngSubmit)="guardar()">
+      <ion-item>
+        <ion-label>Nombre</ion-label>
+        <ion-input inputmode="text" formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apellido</ion-label>
+        <ion-input inputmode="text" formControlName="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Correo</ion-label>
+        <ion-input inputmode="email" formControlName="correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Comentario</ion-label>
+        <ion-textarea formControlName="comentario"></ion-textarea>
+      </ion-item>
+
+      <button ion-button type="submit" block>Enviar</button>
+    </form>
+
+    <ion-card *ngIf="status">
+      <ion-card-header>
+        <ion-card-title>Datos enviados</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Hola {{nombre}} {{apellido}} tu comentario "{{comentario}}" fue enviado con éxito!! 
+        Pronto recibirás una respuesta al correo {{correo}}
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
 </ion-content>
