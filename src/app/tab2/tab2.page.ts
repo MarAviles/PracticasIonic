@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../interface/user.modelo';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,17 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  usuario: User = {} as User;
+  usuarios:User[] = [];
+
+  constructor(private UserService: UserService) {}
+
+  ngOnInit(): void {   
+    this.usuario = this.UserService.getUsuario(0);
+  }
+
+  getlike() {
+    this.usuarios = this.UserService.getLike();
+  }
 
 }
