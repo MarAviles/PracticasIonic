@@ -19,13 +19,13 @@ export class Tab1Page {
     this.usuario = this.UserService.getUsuario(this.i);
   }
 
-  Like(){
-    this.usuario = this.UserService.getUsuario(this.i);
-    this.UserService.setLike(this.usuario);
+  // Like(){
+  //   this.usuario = this.UserService.getUsuario(this.i);
+  //   this.UserService.setLike(this.usuario);
     
-    this.i = this.i + 1;
-    this.usuario = this.UserService.getUsuario(this.i);
-  }
+  //   this.i = this.i + 1;
+  //   this.usuario = this.UserService.getUsuario(this.i);
+  // }
 
   Dislike(){
     this.i = this.i + 1;

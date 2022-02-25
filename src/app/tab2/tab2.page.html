@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
 
   <ion-card>
-    <img src="../../assets/{{usuario.img}}">
+    <img src="../../assets/{{usuario.imagen}}">
     <ion-card-content>
       <ion-card-title>
         {{usuario.nombre}}
@@ -17,10 +17,10 @@
     </ion-card-content>
   </ion-card>
 
-  <button (click)="getlike()">Ver Me gustas</button>
+  <!--<button (click)="getlike()">Ver Me gustas</button>-->
 
   <ion-card *ngFor="let user of usuarios">
-      <img src="../../assets/{{user.img}}">
+      <img src="../../assets/{{user.imagen}}">
       <ion-card-content>
         <ion-card-title>
           {{user.nombre}}

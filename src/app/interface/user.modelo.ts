@@ -1,6 +1,10 @@
 export interface User {
     nombre: string,
-    img: string,
-    edad: string,
-    like: any,
+    apellido: string,
+    correo: string,
+    password: string,
+    edad: number,
+    genero: string,
+    descripcion: string,
+    imagen: string
 }
