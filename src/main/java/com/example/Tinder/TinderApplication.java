@@ -1,4 +1,4 @@
-package com.example.Tinder;
+package com.example.tinder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
