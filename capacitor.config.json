@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Tinder",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
