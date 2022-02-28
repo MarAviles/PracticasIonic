@@ -18,8 +18,8 @@ export class Tab2Page {
     this.usuario = this.UserService.getUsuario(0);
   }
 
-  // getlike() {
-  //   this.usuarios = this.UserService.getLike();
-  // }
+  getlike() {
+    this.usuarios = this.UserService.getLike();
+  }
 
 }
