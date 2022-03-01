@@ -1,0 +1,24 @@
+.body{
+    height: 100%;
+    width: 100%;
+    background: rgb(222,70,134);
+    background: linear-gradient(54deg, rgba(222,70,134,1) 35%, rgba(255,135,66,1) 100%);
+}
+
+.contenedor {
+    padding-top: 40%;
+}
+
+.botones {
+    width: 70%;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+ion-button {
+    margin-bottom: 15px;
+}
+
+img {
+    margin: 0px auto;
+}

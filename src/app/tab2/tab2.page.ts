@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { User } from '../interfaces/user.model';
+import { UserService } from '../services/user.service';
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -7,6 +10,16 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  usuario: User = {} as User;
+
+  constructor(private UserService: UserService) {}
+
+  ngOnInit() {
+    this.usuario = this.UserService.recibirUsuario();
+  }
+
+  // mandarUsuario(usuario: User) {
+  //   this.usuario = usuario;
+  // }
 
 }

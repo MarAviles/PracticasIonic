@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../interfaces/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +9,57 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  usuarios:User[] = [];
+  usuario: User = {} as User;
+  perfil: User = {} as User;
+  i:number = 0;
 
+  constructor(private UserService: UserService) {}
+
+  ngOnInit() {
+    this.ObtenerUsuarios();
+    this.perfil = this.UserService.recibirUsuario();
+  }
+
+  ObtenerUsuarios(){
+    this.UserService.getUsers().subscribe((res:any)=>{
+      this.usuarios = res;
+      console.log(this.usuarios.length);
+      if(this.perfil.nombre === this.usuarios[0].nombre){
+        console.log("El usuario es Taylor");
+        this.i = this.i + 1;
+        this.usuario = this.usuarios[this.i];
+      }else{
+        console.log("El usuario no es Taylor");
+        this.usuario = this.usuarios[this.i];
+      }
+    },(error)=>{
+    });
+  }
+
+
+  Like(){
+    this.i = this.i + 1;
+    if(this.i < this.usuarios.length){
+      if(this.perfil.nombre === this.usuarios[this.i].nombre){
+        this.i = this.i + 1;
+        this.usuario = this.usuarios[this.i];
+      }else{
+        this.usuario = this.usuarios[this.i];
+      }
+    }
+  }
+
+
+  Dislike(){
+    this.i = this.i + 1;
+    if(this.i < this.usuarios.length){
+      if(this.perfil.nombre === this.usuarios[this.i].nombre){
+        this.i = this.i + 1;
+        this.usuario = this.usuarios[this.i];
+      }else{
+        this.usuario = this.usuarios[this.i];
+      }
+    }
+  }
 }

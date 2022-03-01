@@ -1,7 +1,5 @@
 {
   "name": "Tinder",
-  "integrations": {
-    "capacitor": {}
-  },
+  "integrations": {},
   "type": "angular"
 }

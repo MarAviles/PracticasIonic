@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contenido">
+  <div>
+    <form [formGroup]="formularioRegistro" (ngSubmit)="registrar()">
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input inputmode="text" formControlName="nombre"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input inputmode="text" formControlName="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input inputmode="number" formControlName="edad"></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-label>Género</ion-label>
+      <ion-list>
+        <ion-radio-group value="Mujer" formControlName="genero">
+          <ion-item>
+            <ion-label>Mujer</ion-label>
+            <ion-radio slot="start" value="Mujer"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Hombre</ion-label>
+            <ion-radio slot="start" value="Hombre"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input inputmode="email" formControlName="email"></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input inputmode="password" formControlName="password"></ion-input>
+      </ion-item>
+  
+      <ion-button  type="submit" color="success">Registrarme</ion-button>
+  
+    </form>
+  </div>
+
+</ion-content>
