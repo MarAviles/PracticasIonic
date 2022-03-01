@@ -1,5 +1,7 @@
 package com.example.tinder.models;
 
+import java.sql.Array;
+
 import javax.persistence.*;
 
 
@@ -91,4 +93,5 @@ public class User {
     public void setImagen(String imagen){
         this.imagen = imagen;
     }
+
 }
