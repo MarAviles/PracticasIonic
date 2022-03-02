@@ -1,7 +1,5 @@
 package com.example.tinder.models;
 
-import java.sql.Array;
-
 import javax.persistence.*;
 
 
@@ -17,7 +15,7 @@ public class User {
     private String apellido;
     private String correo;
     private String password;
-    private Number edad;
+    private Long edad;
     private String genero;
     private String descripcion;
     private String imagen;
@@ -62,11 +60,11 @@ public class User {
         this.password = password;
     }
 
-    public Number getEdad() {
+    public Long getEdad() {
         return edad;
     }
 
-    public void setEdad(Number edad){
+    public void setEdad(Long edad){
         this.edad = edad;
     }
 
@@ -92,6 +90,20 @@ public class User {
 
     public void setImagen(String imagen){
         this.imagen = imagen;
+    }
+
+    public void setAll(User usuario){
+        if(usuario.getEdad() != 0){
+            this.setEdad(usuario.getEdad());
+        }
+
+        if(usuario.getGenero() != ""){
+            this.setGenero(usuario.getGenero());
+        }
+
+        if(usuario.getDescripcion() != ""){
+            this.setDescripcion(usuario.getDescripcion());
+        }
     }
 
 }

@@ -6,15 +6,19 @@ package com.example.tinder.controllers;
 // import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.tinder.models.User;
 import com.example.tinder.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 // import org.springframework.web.bind.annotation.RequestParam;
@@ -35,26 +39,6 @@ public class UserController {
 
     @PostMapping("/save")
     public String guardar(@RequestBody User usuario){
-        
-        //@RequestParam("file") MultipartFile imagen
-        // if(!imagen.isEmpty()) {
-        //     Path directorioImagenes = Paths.get("src/assets");
-        //     String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
-
-        //     try {
-        //         byte[] bytesImg = imagen.getBytes();
-        //         Path rutaCompleta = Paths.get(rutaAbsoluta + "/"+ imagen.getOriginalFilename());
-        //         Files.write(rutaCompleta, bytesImg);
-
-        //         usuario.setImagen(imagen.getOriginalFilename());
-                
-        //     } catch (IOException e) {
-        //         e.printStackTrace();
-        //     }
-            
-        // }
-        
-        
         return UserService.guardar(usuario);
     }
 
@@ -62,6 +46,21 @@ public class UserController {
     public List<User> BuscarUsuario(@RequestParam("query") String query){
         var correo = UserService.Buscarporpalabra(query);
         return correo;
+    }
+
+    @GetMapping("/{id}")
+    public Optional<User> obtenerUsuario(@PathVariable("id") Long id){
+        return UserService.Obtenerid(id);
+    }
+
+    @PutMapping("/editar/{id}")
+    public void editarUser(@PathVariable("id") Long id, @RequestBody User usuario){
+        UserService.editarUser(id, usuario);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminarPorId(@PathVariable("id") Long id){
+       return UserService.eliminarUsuario(id);
     }
 
 }

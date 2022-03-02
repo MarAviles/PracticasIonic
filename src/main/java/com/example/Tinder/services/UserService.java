@@ -28,9 +28,20 @@ public class UserService {
         return UserRepository.findById(id);
     }
 
+    public void editarUser(Long id, User usuario){
+        User userUpdate = UserRepository.findById(id).get();
+        userUpdate.setAll(usuario);
+        UserRepository.save(userUpdate);
+    }
+
     public List<User> Buscarporpalabra(String query){
         List<User> nombre= UserRepository.EncontrarPorPalabra(query);
         return nombre;
+    }
+
+    public String eliminarUsuario(Long id){
+        UserRepository.deleteById(id);
+        return "Usuario eliminado";
     }
 
 
