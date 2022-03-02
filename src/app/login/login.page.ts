@@ -26,11 +26,13 @@ export class LoginPage implements OnInit {
 
   entrar(){
     this.UserService.login(this.formularioLogin.get('correo').value).subscribe((res:any)=>{
+   // console.log(res);
     this.usuario = res;
     if(this.usuario.length === 0){
       console.log("usuario no encontrado");
     }else{
       this.UserService.mandarUsuario(this.usuario[0]);
+      //console.log('usuarios logeado', this.usuario);
       this.Router.navigate(['tabs/tabs/tab1'])
     }
     

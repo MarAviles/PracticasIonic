@@ -17,6 +17,14 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'editarperfil',
+    loadChildren: () => import('./editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
+  },
+  {
+    path: 'megustas',
+    loadChildren: () => import('./megustas/megustas.module').then( m => m.MegustasPageModule)
   }
 ];
 @NgModule({

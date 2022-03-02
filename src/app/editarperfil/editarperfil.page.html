@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="header">
+      <img id = "logo" src="../../assets/Tinder.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formularioEditar" (ngSubmit)="editar()">
+    <ion-item lines="full">
+      <ion-label position="floating">Edad</ion-label>
+      <ion-input type="number" placeholder="{{usuario.edad}}" formControlName="edad"></ion-input>
+    </ion-item>
+
+    <br>
+    <ion-label>Género</ion-label>
+    <ion-list>
+      <ion-radio-group value="{{usuario.genero}}" formControlName="genero">
+        <ion-item>
+          <ion-label>Mujer</ion-label>
+          <ion-radio slot="start" value="Mujer"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Hombre</ion-label>
+          <ion-radio slot="start" value="Hombre"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-item lines="full">
+      <ion-label  position="floating">Descripción</ion-label>
+      <ion-textarea placeholder="{{usuario.descripcion}}" type="text" formControlName="descripcion"></ion-textarea>
+    </ion-item>
+
+    <ion-button  type="submit" color="success">Guardar</ion-button>
+    <ion-button (click)="Salir()"> Cancelar</ion-button>
+  </form>
+
+</ion-content>

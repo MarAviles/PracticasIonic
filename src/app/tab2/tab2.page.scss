@@ -1,3 +1,29 @@
 #logo {
     width: 30px;
 }
+.contendor {
+    width: 100%;
+    height: 100%;
+    background: rosybrown;
+}
+
+ion-card {
+    padding: 10px;
+}
+
+#imagen {
+    width: 350px;
+}
+
+
+button {
+    width: 48%;
+    margin: 0px auto;
+    padding: 17px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background: linear-gradient(54deg, rgba(222,70,134,1) 35%, rgba(255,135,66,1) 100%);
+    color: white;
+}
+

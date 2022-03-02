@@ -1,7 +1,6 @@
 .body{
     height: 100%;
     width: 100%;
-    background: rgb(222,70,134);
     background: linear-gradient(54deg, rgba(222,70,134,1) 35%, rgba(255,135,66,1) 100%);
 }
 
@@ -17,6 +16,21 @@
 
 ion-button {
     margin-bottom: 15px;
+    color: rgb(222,70,134);
+}
+
+button {
+    width: 100%;
+    padding: 17px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: linear-gradient(54deg, rgba(222,70,134,1) 35%, rgba(255,135,66,1) 100%);
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 img {

@@ -13,6 +13,7 @@ export class Tab1Page {
   usuario: User = {} as User;
   perfil: User = {} as User;
   i:number = 0;
+  Likes: User[] = [];
 
   constructor(private UserService: UserService) {}
 
@@ -24,21 +25,23 @@ export class Tab1Page {
   ObtenerUsuarios(){
     this.UserService.getUsers().subscribe((res:any)=>{
       this.usuarios = res;
-      console.log(this.usuarios.length);
       if(this.perfil.nombre === this.usuarios[0].nombre){
-        console.log("El usuario es Taylor");
         this.i = this.i + 1;
         this.usuario = this.usuarios[this.i];
       }else{
-        console.log("El usuario no es Taylor");
         this.usuario = this.usuarios[this.i];
       }
     },(error)=>{
     });
   }
 
-
   Like(){
+    if(this.i < this.usuarios.length){
+      this.Likes.push(this.usuario);
+      console.log(this.Likes);
+      this.UserService.mandarLikes(this.Likes);
+    }
+
     this.i = this.i + 1;
     if(this.i < this.usuarios.length){
       if(this.perfil.nombre === this.usuarios[this.i].nombre){

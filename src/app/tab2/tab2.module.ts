@@ -7,14 +7,24 @@ import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { EditarperfilPage } from '../editarperfil/editarperfil.page';
+import { EditarperfilPageModule } from '../editarperfil/editarperfil.module';
+import { MegustasPage } from '../megustas/megustas.page';
+import { MegustasPageModule } from '../megustas/megustas.module';
 
 @NgModule({
+  entryComponents:[
+    EditarperfilPage,
+    MegustasPage
+  ],
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    EditarperfilPageModule,
+    MegustasPageModule
   ],
   declarations: [Tab2Page]
 })

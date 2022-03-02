@@ -28,7 +28,6 @@ export class RegistroPage implements OnInit {
 
   ObtenerUsuarios(){
     this.UserService.getUsers().subscribe((res)=>{
-      console.log(res);
     },(error)=>{
       console.log(error);
     });
@@ -38,7 +37,7 @@ export class RegistroPage implements OnInit {
   registrar(){
     console.log(this.formularioRegistro.get('nombre')?.value)
     let usuario: User = {
-      id: 1,
+      id: null,
       nombre: this.formularioRegistro.get('nombre')?.value,
       apellido: this.formularioRegistro.get('apellido')?.value,
       correo: this.formularioRegistro.get('email')?.value,
@@ -48,12 +47,13 @@ export class RegistroPage implements OnInit {
       descripcion: '',
       imagen: '',
     }
+    this.UserService.mandarUsuario(usuario);
 
     this.UserService.sendUser(usuario).subscribe((res: any)=>{
       console.log(res);
     },(error)=>{
       this.ObtenerUsuarios();
     });
-    this.Router.navigate(['tabs/tab1'])
+    this.Router.navigate(['/tabs/tabs/tab1'])
   }
 }
