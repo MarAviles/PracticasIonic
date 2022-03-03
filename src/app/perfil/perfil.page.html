@@ -7,15 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-  <ion-card *ngFor="let user of likes; index as i">
-    <img src="../../assets/{{user.imagen}}">
-    <ion-card-content>
+  <ion-card>
+    <img id="imagen" src="../../assets/{{usuario.imagen}}">
+    <ion-card-header>
       <ion-card-title>
-        {{user.nombre}} | {{user.edad}} 
-        <!--<ion-icon name="trash-outline" (click)="eliminar(i)"></ion-icon>-->
+        {{usuario.nombre}} {{usuario.apellido}} | {{usuario.edad}} 
       </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{usuario.descripcion}}
     </ion-card-content>
   </ion-card>
+
 </ion-content>

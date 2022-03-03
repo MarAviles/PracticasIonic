@@ -12,7 +12,7 @@
     <ion-card>
       <img id="imagen" src="../../assets/{{usuario.imagen}}">
       <ion-card-content>
-        <ion-card-title>
+        <ion-card-title (click)="ver()">
           {{usuario.nombre}} | {{usuario.edad}}
         </ion-card-title>
       </ion-card-content>

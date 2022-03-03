@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'megustas',
     loadChildren: () => import('./megustas/megustas.module').then( m => m.MegustasPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 ];
 @NgModule({

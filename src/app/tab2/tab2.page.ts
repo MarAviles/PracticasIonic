@@ -96,7 +96,7 @@ export class Tab2Page {
       componentProps: {
         'likes': this.likes
       }
-    });
+  });
 
     await modal.present();
 

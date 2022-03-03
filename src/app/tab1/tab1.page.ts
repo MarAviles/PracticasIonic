@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from '../interfaces/user.model';
 import { UserService } from '../services/user.service';
+import { ModalController } from '@ionic/angular';
+import { PerfilPage } from '../perfil/perfil.page';
 
 @Component({
   selector: 'app-tab1',
@@ -15,7 +17,7 @@ export class Tab1Page {
   i:number = 0;
   Likes: User[] = [];
 
-  constructor(private UserService: UserService) {}
+  constructor(private UserService: UserService, private ModalController: ModalController) {}
 
   ngOnInit() {
     this.ObtenerUsuarios();
@@ -33,6 +35,23 @@ export class Tab1Page {
       }
     },(error)=>{
     });
+  }
+
+  async ver(){
+    const modal = await this.ModalController.create({
+      component: PerfilPage,
+      componentProps: {
+        'usuario': this.usuario
+      }
+    });
+
+    await modal.present();
+
+    const { data } = await modal.onDidDismiss();
+    // if(data){
+    //   this.obtenerUsuario(data.id);
+    // }
+    
   }
 
   Like(){

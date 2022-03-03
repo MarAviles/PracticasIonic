@@ -13,10 +13,20 @@ export class MegustasPage implements OnInit {
   constructor(private ModalController: ModalController) { }
 
   ngOnInit() {
+    console.log(this.likes);
+  }
+
+  eliminar(i: number){
+    console.log('elimino')
+    this.likes.slice(i,1);
+    console.log(this.likes);
   }
 
   cerrar(){
-    this.ModalController.dismiss();
+    this.ModalController.dismiss({
+     // 'likes': this.likes,
+    })
+
   }
 
 
